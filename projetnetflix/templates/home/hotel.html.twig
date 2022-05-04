@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class='container'>
+        <div class="top-elements">
+            <img id="img" src="{{ asset('assets/images/img-formules/' ~ serie.imageBasic) }}" alt="" width="370" height="270">
+            <img id="img" src="{{ asset('assets/images/img-formules/' ~ serie.imageImmersive) }}" alt="" width="370" height="270">
+            <img id="img" src="{{ asset('assets/images/img-formules/' ~ serie.imageDeluxxe) }}" alt="" width="370" height="270">
+        </div>
+        <div class="bottom-elements">
+            <div >
+                <img id="img" src="{{ asset('assets/images/img-formules/' ~ serie.imageHotel) }}" alt="" width="550" height="350">
+            </div>
+            <div id="desc">
+                <h3>{{ serie.title ~ '.' }}</h3>
+                <p></p>
+                <p>{{ serie.hotel }}</p>
+                <p>{{ serie.adress }}</p>
+                <a href="{{ path('app_home') }}" class="back">BACK &#10006</a>
+            </div>
+        </div >
+    </div>
+{% endblock %}
+

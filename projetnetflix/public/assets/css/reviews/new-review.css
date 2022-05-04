@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "Inter-Bold";
+    src: url("/Inter-3.15/Inter Web/Inter-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Medium";
+    src: url("/Inter-3.15/Inter Web/Inter-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("/Inter-3.15/Inter Web/Inter-Regular.woff") format("woff");
+}
+h1 {
+    font-family: "Inter-Medium", sans-serif;
+    color:  #dc3545;
+    margin-bottom: 5vh;
+    margin-top: 0;
+}
+h3 , h4 {
+    font-family: "Inter-Regular", sans-serif;
+    color: white;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    /*max-width: 800px;*/
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+.example-wrapper code {
+    background: #F5F5F5;
+    padding: 2px 6px;
+}
+
+.list-group-item{
+    background: white;
+    font-family: "Inter-Regular", sans-serif;
+    border: solid 2px #4361EE;
+    color: black;
+    margin-bottom: 5vh;
+}
+.container{
+    margin-top: 5vh;
+}
+.form label{
+    color: white;
+    font-family: "Inter-Medium", sans-serif;
+}
+.container label{
+    color: white;
+    font-family: "Inter-Medium", sans-serif;
+}
+.container button{
+    margin-top: 5vh;
+}
+.container a{
+    margin-top: 5vh;
+}
+.table td {
+    color: #fff;
+}
+.table-hover tr td:hover{
+    color: #dc3545;
+}
+
+/* btn's */
+.btn-modifier {
+    margin-left: 2em;
+}
+#btn-voir-resa,
+#btn-editer-resa {
+    margin: 0;
+}
+
+.btn-secondary {
+    margin: .3em 16px 16px 1em !important;
+
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        text-align: center;
+    }
+     .btn {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .btn-modifier, .btn-retour {
+        width: 100%;
+        display: block;
+        margin-left: 0 !important;
+        margin-bottom: 40px;
+    }
+    form .btn-retour {
+        margin-bottom: 60px ;
+    }
+
+    .btn-success,
+    .btn-secondary {
+        display: block;
+        width: 100%;
+        margin: 1em 0 1em 0 !important;
+    }
+    .btn-success {
+        margin-top: 3em !important;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .btn {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .btn-modifier, .btn-retour {
+        width: 100%;
+        display: block;
+        margin-left: 0 !important;
+        margin-bottom: 40px;
+    }
+    form .btn-retour {
+        margin-bottom: 60px ;
+    }
+    /*    */
+    #reviews label {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    form .col-sm-10 {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    form .mb-3 {
+        margin: 0 !important;
+    }
+    #reviews_comment {
+        min-height: 150px;
+    }
+}

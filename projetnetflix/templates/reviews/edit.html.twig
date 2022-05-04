@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/reviews/edit-comments.css') }}">
+{% endblock %}
+
+{% block title %}HotelNetflix | Editer commentaire{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <h5>Editer mon commentaire : </h5>
+
+        {{ include('reviews/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+        <div>
+            <a href="{{ path('app_reviews_index') }}" class="btn btn-secondary mb-3">Retour</a>
+        </div>
+
+        {{ include('reviews/_delete_form.html.twig') }}
+    </section>
+
+{% endblock %}
+

@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "Inter-Bold";
+    src: url("/Inter-3.15/Inter Web/Inter-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Medium";
+    src: url("/Inter-3.15/Inter Web/Inter-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("/Inter-3.15/Inter Web/Inter-Regular.woff") format("woff");
+}
+h1 {
+    font-family: "Inter-Medium", sans-serif;
+    color:  #dc3545;
+    margin-bottom: 5vh;
+    margin-top: 0;
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    /*max-width: 800px;*/
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+.example-wrapper code {
+    background: #F5F5F5;
+    padding: 2px 6px;
+}
+
+form {
+    color: #fff;
+}
+
+#registration_form_plainPassword_help {
+    color: #dc3545;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        text-align: center;
+    }
+    .example-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .btn-modifier, .btn-retour {
+        width: 100%;
+        display: block;
+        margin-left: 0 !important;
+        margin-bottom: 40px;
+    }
+    form .btn-retour {
+        margin-bottom: 60px ;
+    }
+
+}

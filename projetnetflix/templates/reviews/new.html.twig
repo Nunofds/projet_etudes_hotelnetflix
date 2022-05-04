@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/reviews/new-review.css') }}">
+{% endblock %}
+
+{% block title %}HotelNetflix | Nouveau commentaire{% endblock %}
+
+{% block body %}
+    <section class="container example-wrapper">
+        <h1>Nouveau commentaire</h1>
+
+        {{ include('reviews/_form.html.twig') }}
+
+        <a href="{{ path('app_user_booking_index') }}" class="btn btn-secondary">Retour</a>
+    </section>
+{% endblock %}

@@ -1,0 +1,208 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/home/slider_serie.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/home/popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/home/review.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div class="home-container">
+    <header>
+         <div class="title">
+             <h1>Vivez une <br>expérience immersive.</h1>
+         </div>
+         <ul>
+             <li><a href="#">Une serie.</a></li>
+             <li><a href="#">Un cadre unique.</a></li>
+             <li><a href="#">3 formules.</a></li>
+         </ul>
+    </header>
+    <button class="rule-btn">COMMENT ÇA MARCHE ?</button>
+     <!-- SCROLL ANIMATION -->
+    <div class="mouse"></div>
+    <!-- / SCROLL ANIMATION -->
+    <button class="rule-btn">1. CHOISIS TA SÉRIE</button>
+
+    <!-- **** SERIE SLIDER **** -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/hotelNetflix-img/img-icons/chooseSerie.jpeg" class="d-block w-100" alt="image">
+                <div class="carousel-caption d-md-block">
+                    <h5></h5>
+                    <a href="#popup" class="btn btn-danger">VOIR TOUS LES HOTELS</a>
+                </div>
+            </div>
+            {% for serie in series %}
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/images/img-serie/' ~ serie.imageSerie) }}" class="d-block w-100" alt="image">
+                    <div class="carousel-caption d-md-block">
+                        <h5>{{ serie.name }}</h5>
+                        <a href="{{ path('app_hotel_show', {'id': serie.id}) }}" class="btn btn-danger">DÉCOUVRIR L'HOTEL</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- SERIE SLIDER -->
+
+    <!-- SERIE POP UP -->
+    <div id="popup" class="overlay">
+        <div class="popup">
+        {% for info in series %}
+            <div class="top-elements">
+                <img id="img" src="{{ asset('assets/images/img-formules/' ~ info.imageBasic) }}" alt="" width="370" height="270">
+                <img id="img" src="{{ asset('assets/images/img-formules/' ~ info.imageImmersive) }}" alt="" width="370" height="270">
+                <img id="img" src="{{ asset('assets/images/img-formules/' ~ info.imageDeluxxe) }}" alt="" width="370" height="270">
+            </div>
+            <div class="bottom-elements">
+                <img id="img" src="{{ asset('assets/images/img-formules/' ~ info.imageHotel) }}" alt="" width="550" height="350">
+                <div id="desc">
+                    <h3>{{ info.title }}</h3>
+                    <p><br>{{ info.hotel }}</p>
+                    <p>{{ info.adress }}</p>
+
+                    <a href="#" class="back">BACK &#10006</a>
+                </div>
+            </div >
+        {% endfor %}
+        </div>
+    </div>
+    <!-- SERIE POP UP -->
+
+    <button class="rule-btn">2. CHOISIS TA FORMULE</button>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img class="card-img-top border-10" src="/hotelNetflix-img/img-formules/basic.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">NETFLIX & CHILL.</h5>
+                        <h6 class="card-subtitle mb-2">Idéale pour un séjour calme & reposant</h6>
+                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Séjour en Basic room & welcome surprise</li>
+                            <li class="list-group-item">Entrées gratuites salles cinéma/jeu</li>
+                            <li class="list-group-item">Accès Backstage série & restaurant</li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <span class="btn btn-danger">200€/nuit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img class="card-img-top border-10" src="/hotelNetflix-img/img-formules/immersive.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">IMMERSIVE ADVENTURE.</h5>
+                        <h6 class="card-subtitle mb-2">Un max de fun, une expérience inoubliable !</h6>
+                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Séjour en Immersive room & welcome surprise</li>
+                            <li class="list-group-item">Entrées gratuites salles cinéma/jeu</li>
+                            <li class="list-group-item">Accès Backstage série & Escape game</li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <span class="btn btn-danger">450€/nuit</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img class="card-img-top border-10" src="/hotelNetflix-img/img-formules/deluxxe.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">DELUXXE.</h5>
+                        <h6 class="card-subtitle mb-2">Netflix en grand : découvrez la magie Netflix Hotel</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Séjour en Deluxxe room VR home cinema</li>
+                            <li class="list-group-item">Entrées gratuites salles cinéma/jeu/spa</li>
+                            <li class="list-group-item">Accès Backstage série & Escape game</li>
+                        </ul>
+                       </div>
+                    <div class="card-body">
+                        <span class="btn btn-danger">800€/nuit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="ready-btn">READY ?</button>
+    <!-- SCROLL ANIMATION -->
+    <div class="mouse"></div>
+    <!-- / SCROLL ANIMATION -->
+    <button class="rule-btn">3. RESERVE TON SÉJOUR</button>
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-lg-offset-1">
+            <form id="contact-form">
+                <div class="row mx-auto">
+                    <div class="col-md-6">
+                        <label for="serie"></label>
+                        <select id="serie" name="serie" class="form-control">
+                        {% for serie in series %}
+                            <option value="{{ serie.name }}">{{ serie.name }}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="formule"></label>
+                        <select id="formule" name="formule" class="form-control">
+                            <option value="formulaChoice" selected>Choisissez une formule</option>
+                            <option value="netflixChill">Netflix & Chill</option>
+                            <option value="immersiveAdventure">Immersive Adventure</option>
+                            <option value="deluxxe">Deluxxe</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="date"></label>
+                        <input type="date" id="date" name="date" class="form-control" placeholder="Choisissez les dates de votre séjour *">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="pax"></label>
+                        <input type="number" id="pax" name="pax" class="form-control" placeholder="Combien de personnes pour ce séjour ? *">
+                    </div>
+                </div>
+                <div class="col-md-6 mx-auto text-center">
+                    <a href="{{ path('app_login') }}" type="submit" class="rule-btn mb-5">RESERVER &#x1F44C</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="reviews-section">
+        <h5 id="review-title">HOTEL NETFLIX</h5>
+        <section id="livre-or" class="mx-auto">LIVRE D'OR</section>
+    </div>
+
+{#    comments#}
+  <section class="container card-comments">
+      {% for review in reviews %}
+      <div class="col-sm-12 col-md-3">
+          <div class="card text-center" style="width: 18rem;">
+              <div class="card-body">
+                  <h6 class="card-title mb-2"><span>Pseudo :</span>  {{review.pseudo ? review.pseudo : '' }}</h6>
+                  <h6 class="card-title mb-2"><span>Serie choisie:</span> {{review.serie.name}}</h6>
+                  <h6 class="inter-regular-class card-title mb-2"><span>Avis :</span> {{review.comment ? review.comment : ""}}</h6>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </section>
+
+
+</div>
+{% endblock %}
+{% block javascripts %}
+    {# cdn js bootstrap5 #}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}

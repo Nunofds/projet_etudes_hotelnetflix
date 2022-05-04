@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Inter-Bold";
+    src: url("/Inter-3.15/Inter Web/Inter-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Medium";
+    src: url("/Inter-3.15/Inter Web/Inter-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("/Inter-3.15/Inter Web/Inter-Regular.woff") format("woff");
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: -10vh;
+    margin-bottom: 5vh;
+}
+#img{
+    border: solid 0.2rem #4361EE;
+    border-radius: 40px 40px 40px 40px;
+}
+#desc{
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+}
+#desc h3{
+    font-family: "Inter-Bold", sans-serif;
+}
+#desc p{
+    font-family: "Inter-Regular", sans-serif;
+}
+.back{
+    top: 5vh;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #BC1B1B;
+    filter: blur(1px);
+}
+.back:hover{
+    color: white;
+    filter: blur(1px);
+}
+.overlay:target{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+@media screen and (max-width: 768px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: -10vh;
+        margin-bottom: 5vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-y: hidden;
+    }
+
+    .top-elements{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bottom-elements{
+        overflow-y: hidden;
+    }
+
+    .back{
+        height: 60vh;
+        margin-bottom: -5vh;
+    }
+
+}
+

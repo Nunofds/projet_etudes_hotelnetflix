@@ -1,0 +1,19 @@
+/* css for mentions légales */
+
+section {
+    color: #fff;
+}
+
+h1 , h3 {
+    color: #dc3545;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 2em;
+    text-align: left;
+}
+

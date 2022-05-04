@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/admin.css') }}">
+{% endblock %}
+
+{% block title %}HotelNetflix | Admin | Nouvelle Serie{% endblock %}
+
+{% block body %}
+    <h1><strong>Votre nouvelle serie</strong></h1>
+    {{ include('admin/serie/_form.html.twig') }}
+{% endblock %}
+

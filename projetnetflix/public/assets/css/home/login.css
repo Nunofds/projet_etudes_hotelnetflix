@@ -1,0 +1,21 @@
+/* css for login page */
+form h1 {
+    color: #dc3545;
+    text-align: left;
+}
+form {
+    color: #fff;
+}
+
+button {
+    margin-right: 3em;
+}
+
+@media screen and (max-width: 768px) {
+    button, a {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HotelNetflix | Mon profil{% endblock%}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/user/profil.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper container">
+        <h1>Mes Informations</h1>
+
+        <ul class="list-group">
+            <li class="list-group-item">Email :  {{app.user.email}}</li>
+            <li class="list-group-item">Pseudo : {{app.user.pseudo}}</li>
+            <li class="list-group-item">mot de passe : ***** </li>
+            <li class="list-group-item">Rôle :
+                {% for role in app.user.roles %}
+                    {% if role=='ROLE_ADMIN' %} Administrator
+                    {% else %} User
+                    {% endif %}
+                    {{  not loop.last ? ',' : ''}}
+                {% endfor %}
+            </li>
+        </ul>
+
+        <a href="{{ path('user') }}" class="btn btn-secondary ms-3">retour</a>
+
+    </div>
+
+{% endblock %}
+

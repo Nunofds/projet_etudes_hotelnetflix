@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HotelNetflix | Nouvelle réservation {% endblock %}
+
+{#{% block stylesheets %}#}
+{#    <link rel="stylesheet" href="{{ asset('assets/css/user/user.css') }}">#}
+{#{% endblock %}#}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/booking/edit-resa.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1 class="container">Votre nouvelle réservation</h1>
+
+    {{ include('user/booking/_form.html.twig') }}
+
+    <div class="container">
+        <a href="{{ path('app_user_booking_index') }}" class="btn btn-secondary mx-3">retour</a>
+    </div>
+
+    {% for type, messages in app.flashes %}
+        {% for msg in messages %}
+            <div class="alert alert-{{ type }}">{{ msg|raw }}</div>
+        {% endfor %}
+    {% endfor %}
+
+
+
+{% endblock %}

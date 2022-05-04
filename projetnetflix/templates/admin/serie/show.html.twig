@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <!-- BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CSS SHEET -->
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/admin.css') }}">
+{% endblock %}
+
+{% block title %}HotelNetflix | Admin | Informations serie{% endblock %}
+
+{% block body %}
+    <h1><strong>Infos serie</Strong></h1>
+
+    <table id="infos-serie" class="container table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ serie.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ serie.name }}</td>
+        </tr>
+        <tr>
+            <th>Hotel</th>
+            <td>{{ serie.hotel }}</td>
+        </tr>
+        <tr>
+            <th>Adresse</th>
+            <td>{{ serie.adress }}</td>
+        </tr>
+        <tr>
+            <th>Image_serie</th>
+            <td><img src='{{ asset('assets/images/img-serie/' ~ serie.imageSerie) }}' alt="image de la serie" height='80px'></td>
+        </tr>
+        <tr>
+            <th>Image_basic</th>
+            <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageBasic) }}' alt="image de la chambre basic" height='80px'></td>
+        </tr>
+        <tr>
+            <th>Image_immersive</th>
+            <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageImmersive) }}' alt="image de de la chambre immersive" height='80px'></td>
+        </tr>
+        <tr>
+            <th>Image_deluxxe</th>
+            <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageDeluxxe) }}' alt="image de la chambre deluxe" height='80px'></td>
+        </tr>
+        <tr>
+            <th>Image_hotel</th>
+            <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageHotel) }}' alt="image de l'hotel" height='80px'></td>
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ serie.title }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="container">
+        <a href="{{ path('app_admin_serie_index') }}" class="btn btn-danger">retour</a>
+        <a href="{{ path('app_admin_serie_edit', {'id': serie.id}) }}" class="btn btn-primary">éditer</a>
+    </div>
+    <div class="container container-form">
+        {{ include('admin/serie/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

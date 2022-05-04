@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HotelNetflix | M'inscrire{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/home/registration.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <section class="container">
+        <h1 class="mb-5">M'inscrire</h1>
+
+        <div class="form">
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.pseudo) }}
+        {{ form_row(registrationForm.name) }}
+        {{ form_row(registrationForm.lastname) }}
+
+        {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe',
+                help: '6 caractères minimum'
+            }) }}
+
+            {{ form_row(registrationForm.agreeTerms,{
+                label: "J'accepte les conditions du site"
+            }) }}
+
+            <button type="submit" class="btn btn-success">M'inscrire</button>
+        {{ form_end(registrationForm) }}
+        </div>
+    </section>
+{% endblock %}
+

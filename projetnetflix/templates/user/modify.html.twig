@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HotelNetflix | Actualiser Profile {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/user/update-user-profile.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <section class="container">
+        <h1>Mettre à jour mes informations :</h1>
+        <div class="form">
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.pseudo) }}
+        {{ form_row(registrationForm.name) }}
+        {{ form_row(registrationForm.lastname) }}
+
+        {{ form_row(registrationForm.plainPassword, {
+                label: 'Password',
+                help: '6 caractères minimum'
+            }) }}
+
+            {{ form_row(registrationForm.agreeTerms, {
+                label: "J'accepte les conditions du site"
+            }) }}
+
+            <button type="submit" class="btn-modifier btn btn-success">Modifier</button>
+            <a href="{{ path('user') }}" class="btn-retour btn btn-secondary mx-3">Retour</a>
+        {{ form_end(registrationForm) }}
+        </div>
+    </section>
+
+{% endblock %}
+
+

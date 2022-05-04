@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/user/user.css') }}">
+{% endblock %}
+
+{% block title %}HotelNetflix | Mes réservations{% endblock %}
+
+{% block body %}
+    <section class="container my-5">
+        <h1>Mes réservations : </h1>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-striped" style="overflow-x: scroll">
+                <thead>
+                    <tr>
+                        <th>Serie </th>
+                        <th>Formule</th>
+                        <th>Début du séjour</th>
+                        <th>Fin du séjour</th>
+                        <th>N° de personnes</th>
+                        <th>Quoi faire?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for booking in app.user.bookings %}
+                    <tr>
+                        <td> {{booking.serie.name}}</td>
+                        <td>{{ booking.formule }}</td>
+                        <td>{{ booking.checkin ? booking.checkin|date('Y-m-d') : '' }}</td>
+                        <td>{{ booking.checkout ? booking.checkout|date('Y-m-d') : '' }}</td>
+                        <td>{{ booking.pax }}</td>
+                        <td>
+                            <a href="{{ path('app_user_booking_show', {'id': booking.id}) }}" id="btn-voir-resa" class="btn btn-success">Voir</a>
+                            <a href="{{ path('app_user_booking_edit', {'id': booking.id}) }}" id="btn-editer-resa" class="btn btn-primary">Editer</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">Aucune réservation trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+{#        <div id="table-responsive">#}
+{#            <div>#}
+{#                <h6>Serie </h6>#}
+{#                <h6>Formule</h6>#}
+{#                <h6>Début du séjour</h6>#}
+{#                <h6>Fin du séjour</h6>#}
+{#                <h6>N° de personnes</h6>#}
+{#                <h6>Quoi faire?</h6>#}
+{#            </div>#}
+{#            {% for booking in app.user.bookings %}#}
+{#            <div>#}
+{#                <h6> {{booking.serie.name}}</h6>#}
+{#                <h6>{{ booking.formule }}</h6>#}
+{#                <h6>{{ booking.checkin ? booking.checkin|date('Y-m-d') : '' }}</h6>#}
+{#                <h6>{{ booking.checkout ? booking.checkout|date('Y-m-d') : '' }}</h6>#}
+{#                <h6>{{ booking.pax }}</h6>#}
+{#                <h6>#}
+{#                    <a href="{{ path('app_user_booking_show', {'id': booking.id}) }}" id="btn-voir-resa" class="btn btn-success">Voir</a>#}
+{#                    <a href="{{ path('app_user_booking_edit', {'id': booking.id}) }}" id="btn-editer-resa" class="btn btn-primary">Editer</a>#}
+{#                </h6>#}
+{#            </div>#}
+{#            {% else %}#}
+{#                <tr>#}
+{#                    <td colspan="6">Aucune réservation trouvé</td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#        </div>#}
+
+        <a href="{{ path('app_user_booking_new') }}" class="btn btn-success d-block w-100 mb-3">Nouvelle réservation</a>
+        <a href="{{ path('user') }}" class="btn btn-secondary d-block w-100 mb-3">Retour</a>
+    </section>
+{% endblock %}

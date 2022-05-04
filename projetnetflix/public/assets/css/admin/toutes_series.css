@@ -1,0 +1,84 @@
+
+@font-face {
+    font-family: "Inter-Bold";
+    src: url("/Inter-3.15/Inter Web/Inter-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Medium";
+    src: url("/Inter-3.15/Inter Web/Inter-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("/Inter-3.15/Inter Web/Inter-Regular.woff") format("woff");
+}
+/*------------ General ------------*/
+*{
+    transition: all 3s;
+}
+
+body{
+    background: #fff;
+}
+
+h1{
+    color: rgb(216,31,38);
+}
+
+/*------------ Table ------------*/
+table th {
+    /*color: indianred;*/
+    color: rgb(216,31,38);
+    font-size: 16px;
+}
+
+table td {
+    /*color: rgb(216,31,38);*/
+    /*color: rgb(255,255,255);*/
+    color: rgb(0,0,0);
+    font-size: 12px;
+}
+
+/*------------ Buttons ------------*/
+.new-serie{
+    border:2px solid blue;
+    border-radius:25px;
+    color: red;
+    transition: .3s;
+}
+
+.new-serie:hover{
+    color: red;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 255, .5);
+    transform: scale(1.05) ;
+}
+
+.afficher-serie{
+    font-style: italic;
+    border: 2px solid blue;
+    border-radius: 10px;
+    /*color: rgb(255, 255, 255);*/
+    color: rgb(0, 0, 0);
+    transition: .3s;
+    margin-bottom: 1rem;
+}
+.afficher-serie:hover{
+    /*color: blue;*/
+    box-shadow: 3px 3px 3px rgba(0, 0, 255, .5);
+    transform: scale(1.05) ;
+}
+
+.editer-serie{
+    font-style: italic;
+    border: 2px solid rgb(0, 100, 0);
+    border-radius: 10px;
+    /*color: rgb(255, 255, 255);*/
+    color: rgb(0, 0, 0);
+    transition: .3s;
+    margin-bottom: 1rem;
+}
+.editer-serie:hover {
+    /*color: rgb(0, 100, 0);*/
+    box-shadow: 3px 3px 3px rgba(0, 100, 0, .5);
+    transform: scale(1.05);
+}
+

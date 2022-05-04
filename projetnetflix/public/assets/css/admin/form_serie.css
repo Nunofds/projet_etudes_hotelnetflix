@@ -1,0 +1,46 @@
+
+body h1 {
+    color: indianred;
+}
+
+form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+input{
+    margin-bottom: 1.5em;
+}
+
+#serie label{
+    display: block;
+    padding-left: 5px;
+    color: indianred;
+}
+
+/* style for show serie */
+table th {
+    color: indianred;
+    font-size: 16px;
+}
+
+table td {
+    color: palevioletred;
+    font-size: 12px;
+}
+
+/*///////////////// @media queries /////////////////////*/
+
+/* @media queries pour le responsive du formulaire (a changer si vous voulez) */
+@media screen  and (max-width: 768px){
+    form{
+        width: 90%;
+    }
+}
+
+@media screen  and (max-width: 425px){
+    form{
+        text-align: center;
+        width: 100%;
+    }
+}

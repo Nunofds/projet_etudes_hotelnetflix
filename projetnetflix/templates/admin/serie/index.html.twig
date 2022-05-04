@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <h1><strong>Toutes les séries</strong></h1>
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-light table-striped">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Hotel</th>
+                <th>Adresse</th>
+                <th>Image serie</th>
+                <th>Image basic</th>
+                <th>Image immersive</th>
+                <th>Image deluxxe</th>
+                <th>Image hotel</th>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for serie in series %}
+                <tr>
+                    <td>{{ serie.name }}</td>
+                    <td>{{ serie.hotel }}</td>
+                    <td>{{ serie.adress }}</td>
+                    <td><img src='{{ asset('assets/images/img-serie/' ~ serie.imageSerie) }}' alt="image de la serie" height='80px'></td>
+                    <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageBasic) }}' alt="image de la chambre basic" height='80px'></td>
+                    <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageImmersive) }}' alt="image de de la chambre immersive" height='80px'></td>
+                    <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageDeluxxe) }}' alt="image de la chambre deluxe" height='80px'></td>
+                    <td><img src='{{ asset('assets/images/img-formules/' ~ serie.imageHotel) }}' alt="image de l'hotel" height='80px'></td>
+                    <td>{{ serie.title }}</td>
+                    <td>
+                        <a href="{{ path('app_admin_serie_show', {'id': serie.id}) }}" class="btn afficher-serie">afficher</a>
+                        <a href="{{ path('app_admin_serie_edit', {'id': serie.id}) }}" class="btn editer-serie">éditer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="11">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{{ path('app_admin_serie_new') }}" class="btn btn new-serie ms-5">Ajouter une nouvelle serie</a>
+    <a href="{{ path('app_admin') }}" class="btn btn-primary mx-3">Retour</a>
+
+{% endblock %}

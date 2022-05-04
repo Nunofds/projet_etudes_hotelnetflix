@@ -1,0 +1,75 @@
+form {
+    color: #fff;
+    margin-top: 3rem;
+}
+
+h1 {
+    color: #dc3545;
+}
+
+p {
+    color: #fff;
+}
+
+.container a {
+    margin: 16px;
+}
+#form-delete {
+    margin: 16px;
+    margin-top: .2em;
+}
+
+form .btn-delete {
+    margin-top: 3em !important;
+}
+
+#form-reviews {
+    margin: 16px 16px 16px 16px;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+    h5 {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .container a,
+    button {
+        display: block;
+        width: 100%;
+    }
+    .container a {
+        margin: 0 !important;
+    }
+    .btn-success {
+        margin: 3em 0 1em 0 !important;
+    }
+    /*    */
+    #reviews label {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    form .col-sm-10 {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    form .mb-3 {
+        margin: 0 !important;
+    }
+    #reviews_comment {
+        min-height: 150px;
+    }
+    #form-delete button {
+        margin-top: 1em !important;
+    }
+
+    .col-form-label {
+        display: block;
+        width: 100%;
+    }
+
+}
+

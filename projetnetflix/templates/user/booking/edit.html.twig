@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HotelNetflix | Editer réservation{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/booking/edit-resa.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1 class="container">Editer ma réservation</h1>
+
+    {{ include('user/booking/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <div class="container">
+        <a href="{{ path('app_user_booking_index') }}" class="btn btn-secondary">Retour</a>
+
+        {{ include('user/booking/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}
+

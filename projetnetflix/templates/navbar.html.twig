@@ -1,0 +1,22 @@
+ <div class="nav-container">
+    <nav>
+        <a href="{{ path('app_home') }}" class="logo_link"><img id="logo" src="/hotelNetflix-img/img-icons/NetflixHotel.png" alt="image du logo" width="200px"></a>
+        <form action="/search" id="searchForm">
+            <input class="input" id="searchInput" name="search" type="search" placeholder="Trouves ta serie ...">
+        </form>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="connect">
+                <a href="{{ path('app_admin') }}"><img src="/hotelNetflix-img/img-icons/285645_user_icon.png" alt="icône de connexion"></a>
+            </div>
+        {% else %}
+            <div class="connect">
+                <a href="{{ path('app_login') }}"><img src="/hotelNetflix-img/img-icons/285645_user_icon.png" alt="icône de connexion"></a>
+            </div>
+        {% endif %}
+        {% if app.user %}
+            <a href="{{ path('app_user_booking_new') }}" class="linkToBook">RESERVER</a>
+        {% endif %}
+
+    </nav>
+</div>

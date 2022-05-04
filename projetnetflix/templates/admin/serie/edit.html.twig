@@ -1,0 +1,20 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}HotelNetflix | Admin | Editer Série{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <h1><strong>Editer une serie</strong></h1>
+
+    {{ include('admin/serie/_form.html.twig', {'button_label': 'Modifier'}) }}
+    <div class="container">
+{#        <a href="{{ path('app_admin_serie_index') }}" class="btn btn-secondary mb-3">retour</a>#}
+        {{ include('admin/serie/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

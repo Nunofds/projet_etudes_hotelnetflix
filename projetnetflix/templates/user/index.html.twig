@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HotelNetflix | Bonjour {{ app.user.pseudo }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/user/user.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper mx-auto p-3">
+        <h1 class="text-center">Bonjour <span>{{ app.user.pseudo }}</span>  ! </h1>
+
+        <h3> Que voulez-vous faire ensuite ?</h3>
+
+        <div class="container mx-auto text-center">
+            <a class="btn btn-danger" href="{{ path('app_user_booking_index') }}">Voir mes réservations</a>
+            <a href="{{ path('app_reviews_index') }}" class="btn btn-danger">Voir mes commentaires</a>
+            <a class="btn btn-danger" href="{{ path('user_profile') }}">Voir mon profil</a>
+            <a class="btn btn-danger" href="{{ path('user_modify') }}">Modifier mon profil</a>
+            <a class="btn btn-danger" href="{{ path('app_logout') }}">Déconnexion</a>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: "Inter-Bold";
+    src: url("/Inter-3.15/Inter Web/Inter-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Medium";
+    src: url("/Inter-3.15/Inter Web/Inter-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("/Inter-3.15/Inter Web/Inter-Regular.woff") format("woff");
+}
+
+.card-body .inter-regular-class {
+    font-family: "Inter-Regular", sans-serif;
+}
+
+.card-comments {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-comments .card{
+    margin-top: 2rem;
+    background: #fff;
+}
+
+.card-comments  .card .card-title {
+    color: #000;
+}
+
+.card-comments  .card .card-title span{
+    color: #dc3545;
+}
+
+.card-comments .card {
+    border: solid 3px #4361EE;
+}
+
+@media screen and (max-width: 768px) {
+    .card-comments div {
+        margin: 0 auto;
+    }
+}

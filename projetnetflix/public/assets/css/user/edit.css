@@ -1,0 +1,21 @@
+/*!* css for show.html.twig page *!*/
+
+.table th,
+.table td {
+    text-align: left;
+}
+
+/* responsive */
+
+@media  screen and (max-width: 768px) {
+    .container a {
+        display: block;
+        width: 100%;
+    }
+    button {
+        display: block;
+        width: 100%;
+    }
+
+}
+

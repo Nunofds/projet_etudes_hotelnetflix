@@ -1,0 +1,64 @@
+/* css for edit page */
+
+form {
+    color: #fff;
+    margin-top: 3rem;
+}
+
+h5,
+p {
+    color: #fff;
+}
+
+h5 {
+    display: inline;
+    background: #FFC107;
+    color: #000;
+    padding: 5px;
+}
+.container a {
+    margin: 16px;
+}
+
+#form-reviews {
+    margin: 16px 16px 16px 16px;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+    h5 {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .container a,
+    button {
+        display: block;
+        width: 100%;
+    }
+    .container a {
+        margin: 0 !important;
+    }
+    .btn-success {
+        margin: 1em 0 1em 0 !important;
+    }
+/*    */
+    #reviews label {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    form .col-sm-10 {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    form .mb-3 {
+        margin: 0 !important;
+    }
+    #reviews_comment {
+        min-height: 150px;
+    }
+
+}
+
